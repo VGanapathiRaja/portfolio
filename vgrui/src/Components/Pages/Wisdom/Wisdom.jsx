@@ -2,74 +2,66 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const experiences = [
-    {
-        company: "First Organization",
-        role: "Frontend Developer",
-        period: "2022 - 2023",
-        summary: "Built responsive React UI, reusable components, and clean frontend layouts.",
-    },
-    {
-        company: "Second Organization",
-        role: "React Developer",
-        period: "2023 - 2024",
-        summary: "Created dashboards, integrated APIs, and improved user experience flows.",
-    },
-    {
-        company: "Third Organization",
-        role: "Senior Frontend Developer",
-        period: "2024 - Present",
-        summary: "Led frontend delivery, mentored developers, and built scalable React systems.",
-        back: "Focused on architecture, accessibility, reusable design systems, and polished UI.",
-    },
+  {
+    company: "First Organization",
+    role: "Frontend Developer",
+    period: "2022 - 2023",
+    summary: "Built responsive React UI, reusable components, and clean frontend layouts.",
+  },
+  {
+    company: "Second Organization",
+    role: "React Developer",
+    period: "2023 - 2024",
+    summary: "Created dashboards, integrated APIs, and improved user experience flows.",
+  },
+  {
+    company: "Third Organization",
+    role: "Senior Frontend Developer",
+    period: "2024 - Present",
+    summary: "Led frontend delivery, mentored developers, and built scalable React systems.",
+    back: "Focused on architecture, accessibility, reusable design systems, and polished UI.",
+  },
 ];
 
 export default function Wisdom() {
-    return (
-        <Section id="experience">
-            <Title>Experience</Title>
+  return (
+    <Section id="experience">
+      <Title>Experience</Title>
 
-            <Timeline>
-                <LampLine>
-                    <LampHead />
-                    <Glow />
-                    <Pole />
-                    <Base />
-                </LampLine>
+      <Timeline>
+        <LampLine>
+          <LampHead />
+          <Glow />
+          <Pole />
+          <Base />
+        </LampLine>
 
-                {experiences.map((item, index) => (
-                    <Row key={item.company} $right={index === 1}>
-                        <Dot />
+        {experiences.map((item, index) => (
+          <Row key={item.company} $right={index === 1}>
+            <Dot />
 
-                        {index === 2 ? (
-                            <FlipCard>
-                                <FlipInner>
-                                    <Card>
-                                        <Period>{item.period}</Period>
-                                        <Company>{item.company}</Company>
-                                        <Role>{item.role}</Role>
-                                        <Text>{item.summary}</Text>
-                                    </Card>
+            <FlipCard>
+              <FlipInner>
+                <FlipFace>
+                  <Period>{item.period}</Period>
+                  <Company>{item.company}</Company>
+                  <Role>{item.role}</Role>
+                  <Text>{item.summary}</Text>
+                </FlipFace>
 
-                                    <Card $back>
-                                        <Period $dark>Highlights</Period>
-                                        <Company>{item.role}</Company>
-                                        <Text>{item.back}</Text>
-                                    </Card>
-                                </FlipInner>
-                            </FlipCard>
-                        ) : (
-                            <Card>
-                                <Period>{item.period}</Period>
-                                <Company>{item.company}</Company>
-                                <Role>{item.role}</Role>
-                                <Text>{item.summary}</Text>
-                            </Card>
-                        )}
-                    </Row>
-                ))}
-            </Timeline>
-        </Section>
-    );
+                <FlipFace $back>
+                  <Period $dark>Highlights</Period>
+                  <Company>{item.company}</Company>
+                  <Role $dark>{item.role}</Role>
+                  <Text>{item.back || item.summary}</Text>
+                </FlipFace>
+              </FlipInner>
+            </FlipCard>
+          </Row>
+        ))}
+      </Timeline>
+    </Section>
+  );
 }
 
 const pulse = keyframes`
@@ -193,14 +185,14 @@ const Dot = styled.span`
 `;
 
 const Card = styled.div`
-  width: min(430px, calc(50% - 75px));
+  width: min(600px, calc(50% - 75px));
   min-height: 220px;
   padding: 28px;
   border: 1px solid rgba(226, 232, 240, 0.16);
   border-radius: 8px;
   background: ${({ $back }) =>
-        $back ? "linear-gradient(145deg, #ffd978, #f8fafc)" : "rgba(15, 23, 42, 0.76)"};
-  color: ${({ $back }) => ($back ? "#172033" : "#f8fafc")};
+    $back ? "linear-gradient(145deg, #ffd978, #909395)" : "rgba(15, 23, 42, 0.76)"};
+  color: ${({ $back }) => ($back ? "#172033" : "#909395")};
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
   backface-visibility: hidden;
 
@@ -211,7 +203,8 @@ const Card = styled.div`
 
 const FlipCard = styled.div`
   width: min(430px, calc(50% - 75px));
-  min-height: 240px;
+  min-height: 260px;
+  perspective: 1400px;
 
   &:hover > div {
     transform: rotateY(180deg);
@@ -224,9 +217,28 @@ const FlipCard = styled.div`
 
 const FlipInner = styled.div`
   position: relative;
-  min-height: 240px;
+  width: 100%;
+  min-height: 260px;
   transform-style: preserve-3d;
-  transition: transform 700ms ease;
+  transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+`;
+
+const FlipFace = styled.div`
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  min-height: 260px;
+  padding: 28px;
+  border: 1px solid rgba(226, 232, 240, 0.16);
+  border-radius: 8px;
+  background: ${({ $back }) =>
+    $back
+      ? "linear-gradient(145deg, #ffd978, #f8fafc)"
+      : "rgba(15, 23, 42, 0.76)"};
+  color: ${({ $back }) => ($back ? "#172033" : "#909395")};
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+  backface-visibility: hidden;
+  transform: ${({ $back }) => ($back ? "rotateY(180deg)" : "rotateY(0deg)")};
 `;
 
 const Period = styled.p`

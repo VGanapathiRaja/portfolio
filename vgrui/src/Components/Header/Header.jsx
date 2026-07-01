@@ -22,7 +22,7 @@ export default function Header() {
         <>
             <Nav scrolled={scrolled}>
                 <Logo href="#">
-                    <span>V</span>GR
+                    {/* <span>V</span>GR  */}
                 </Logo>
 
                 <NavMenu>
