@@ -7,10 +7,17 @@ import Wisdom from './Components/Pages/Wisdom/Wisdom'
 import Personal from './Components/Pages/Personalinfo/Personal'
 import Skills from './Components/Pages/Skill/Skill'
 import Projects from './Components/Pages/Projects/Projects'
+import GlobalStyle from './Components/Fullbody/Scrollbar'
+import Mousehover from './Components/Fullbody/Mousehover'
+import Footer from './Components/Header/Footer'
+
 
 export default function App() {
   return (
     <>
+      <GlobalStyle />
+      <Mousehover />
+
       <Header />
       {/* <Hero /> */}
       <Hero1 />
@@ -19,6 +26,7 @@ export default function App() {
       <Projects />
       <Personal />
       <Getin />
+      <Footer />
     </>
   )
 }

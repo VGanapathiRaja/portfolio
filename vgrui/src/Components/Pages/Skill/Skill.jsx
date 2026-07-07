@@ -2,87 +2,89 @@ import React from "react";
 import styled from "styled-components";
 
 const technicalSkills = [
-    {
-        title: "Frontend",
-        skills: ["React.js", "JavaScript", "HTML5", "CSS3", "Styled Components"],
-    },
-    {
-        title: "Backend",
-        skills: ["Node.js", "Express.js", "REST API", "Authentication", "Server Logic"],
-    },
-    {
-        title: "Database",
-        skills: ["MongoDB", "SQL Basics", "CRUD", "Schema Design", "Data Handling"],
-    },
-    {
-        title: "Tools",
-        skills: ["Git", "GitHub", "VS Code", "Postman", "NPM"],
-    },
+  {
+    title: "Frontend",
+    skills: ["React.js", "JavaScript", "HTML5", "CSS3", " Bootstrap", "Tailwind", "Styled Components"],
+  },
+  {
+    title: "Backend",
+    skills: ["Node.js", "Express.js", "REST API", "Authentication", "Server Logic"],
+  },
+  {
+    title: "Database",
+    skills: ["MongoDB", "SQL Basics", "CRUD", "Schema Design", "Data Handling"],
+  },
+  {
+    title: "Tools",
+    skills: ["Git", "GitHub", "Canva", "Photoshop", "VS Code", "Postman", "NPM"],
+  },
 ];
 
 const personalSkills = [
-    "Problem Solving",
-    "Team Collaboration",
-    "Quick Learning",
-    "Time Management",
-    "Creative Thinking",
-    "Communication",
-    "Adaptability",
-    "Self Motivation",
+  "Team Leading",
+  "Team Collaboration",
+  "Problem Solving",
+  "Quick Learning",
+  "Time Management",
+  "Creative Thinking",
+  "Communication",
+  "Adaptability",
+  "Self Motivation",
+  "punctuality"
 ];
 
 export default function Skills() {
-    return (
-        <SkillsWrapper id="skills">
-            <SectionHead>
-                <SmallTitle>&gt; What I Know</SmallTitle>
-                <Title>Skills</Title>
-                <SubText>
-                    A balanced mix of technical knowledge and personal strengths that help me
-                    build clean, useful, and user-focused web applications.
-                </SubText>
-            </SectionHead>
+  return (
+    <SkillsWrapper id="skills">
+      <SectionHead>
+        <SmallTitle>&gt; What I Know</SmallTitle>
+        <Title>Skills</Title>
+        <SubText>
+          A balanced mix of technical knowledge and personal strengths that help me
+          build clean, useful, and user-focused web applications.
+        </SubText>
+      </SectionHead>
 
-            <SkillLayout>
-                <TechnicalArea>
-                    <AreaTitle>Technical Skills</AreaTitle>
+      <SkillLayout>
+        <TechnicalArea>
+          <AreaTitle>Technical Skills</AreaTitle>
 
-                    <TechGrid>
-                        {technicalSkills.map((group, index) => (
-                            <TechCard key={group.title}>
-                                <CardNumber>0{index + 1}</CardNumber>
-                                <CardTitle>{group.title}</CardTitle>
+          <TechGrid>
+            {technicalSkills.map((group, index) => (
+              <TechCard key={group.title}>
+                <CardNumber>0{index + 1}</CardNumber>
+                <CardTitle>{group.title}</CardTitle>
 
-                                <SkillList>
-                                    {group.skills.map((skill) => (
-                                        <SkillItem key={skill}>{skill}</SkillItem>
-                                    ))}
-                                </SkillList>
-                            </TechCard>
-                        ))}
-                    </TechGrid>
-                </TechnicalArea>
+                <SkillList>
+                  {group.skills.map((skill) => (
+                    <SkillItem key={skill}>{skill}</SkillItem>
+                  ))}
+                </SkillList>
+              </TechCard>
+            ))}
+          </TechGrid>
+        </TechnicalArea>
 
-                <PersonalArea>
-                    <AreaTitle>Personal Skills</AreaTitle>
+        <PersonalArea>
+          <AreaTitle>Personal Skills</AreaTitle>
 
-                    <PersonalGrid>
-                        {personalSkills.map((skill) => (
-                            <PersonalBadge key={skill}>{skill}</PersonalBadge>
-                        ))}
-                    </PersonalGrid>
+          <PersonalGrid>
+            {personalSkills.map((skill) => (
+              <PersonalBadge key={skill}>{skill}</PersonalBadge>
+            ))}
+          </PersonalGrid>
 
-                    <QuoteBox>
-                        <QuoteMark>"</QuoteMark>
-                        <QuoteText>
-                            I believe strong skills are not only about tools, but also about
-                            patience, consistency, communication, and the mindset to keep improving.
-                        </QuoteText>
-                    </QuoteBox>
-                </PersonalArea>
-            </SkillLayout>
-        </SkillsWrapper>
-    );
+          <QuoteBox>
+            <QuoteMark>"</QuoteMark>
+            <QuoteText>
+              I believe strong skills are not only about tools, but also about
+              patience, consistency, communication, and the mindset to keep improving.
+            </QuoteText>
+          </QuoteBox>
+        </PersonalArea>
+      </SkillLayout>
+    </SkillsWrapper>
+  );
 }
 
 const SkillsWrapper = styled.section`

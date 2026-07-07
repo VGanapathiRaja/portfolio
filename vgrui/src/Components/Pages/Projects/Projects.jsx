@@ -1,101 +1,102 @@
 import React from "react";
 import styled from "styled-components";
+import Btn from "../../Button/Btnprimary";
 
 const projects = [
-    {
-        icon: "CMS",
-        title: "Education CMS Platform",
-        text: "A content management system for schools and institutions to manage pages, announcements, courses, blogs, and academic updates.",
-        points: ["Role-based Content", "Page Management", "Admin Publishing"],
-    },
-    {
-        icon: "LMS",
-        title: "Learning Management System",
-        text: "A structured LMS solution for students and teachers with course modules, lessons, progress tracking, and learning resources.",
-        points: ["Course Modules", "Student Progress", "Learning Dashboard"],
-    },
-    {
-        icon: "WEB",
-        title: "Institution Website",
-        text: "A modern responsive website for schools, colleges, and training centers with admission details, programs, gallery, and contact flow.",
-        points: ["Responsive UI", "Admission Pages", "SEO Friendly"],
-    },
-    {
-        icon: "PORTAL",
-        title: "Student Web Portal",
-        text: "A student portal concept for profile access, academic information, notices, assignments, attendance view, and communication updates.",
-        points: ["Student Login", "Academic Data", "Notice Board"],
-    },
-    {
-        icon: "ADMIN",
-        title: "Education Admin Panel",
-        text: "A clean admin dashboard for managing students, teachers, courses, reports, enquiries, and platform settings in one place.",
-        points: ["Dashboard UI", "User Management", "Reports & Analytics"],
-    },
+  {
+    icon: "CMS",
+    title: "Education CMS Platform",
+    text: "A content management system for schools and institutions to manage pages, announcements, courses, blogs, and academic updates.",
+    points: ["Role-based Content", "Page Management", "Admin Publishing"],
+  },
+  {
+    icon: "LMS",
+    title: "Learning Management System",
+    text: "A structured LMS solution for students and teachers with course modules, lessons, progress tracking, and learning resources.",
+    points: ["Course Modules", "Student Progress", "Learning Dashboard"],
+  },
+  {
+    icon: "WEB",
+    title: "Institution Website",
+    text: "A modern responsive website for schools, colleges, and training centers with admission details, programs, gallery, and contact flow.",
+    points: ["Responsive UI", "Admission Pages", "SEO Friendly"],
+  },
+  {
+    icon: "PORTAL",
+    title: "Student Web Portal",
+    text: "A student portal concept for profile access, academic information, notices, assignments, attendance view, and communication updates.",
+    points: ["Student Login", "Academic Data", "Notice Board"],
+  },
+  {
+    icon: "ADMIN",
+    title: "Education Admin Panel",
+    text: "A clean admin dashboard for managing students, teachers, courses, reports, enquiries, and platform settings in one place.",
+    points: ["Dashboard UI", "User Management", "Reports & Analytics"],
+  },
 ];
 
 export default function Projects() {
-    return (
-        <Section id="projects">
-            <Wrapper>
-                <LeftPanel>
-                    <Label>Services</Label>
-                    <Title>My Expertise</Title>
+  return (
+    <Section id="projects">
+      <Wrapper>
+        <LeftPanel>
+          <Label>Services</Label>
+          <Title>My Expertise</Title>
 
-                    <InfoBlock>
-                        <InfoTitle>Solving problems</InfoTitle>
-                        <InfoText>
-                            I build education-focused web products that are simple to manage,
-                            easy to use, and designed for real institutions, admins, teachers,
-                            and students.
-                        </InfoText>
-                    </InfoBlock>
+          <InfoBlock>
+            <InfoTitle>Solving problems</InfoTitle>
+            <InfoText>
+              I build education-focused web products that are simple to manage,
+              easy to use, and designed for real institutions, admins, teachers,
+              and students.
+            </InfoText>
+          </InfoBlock>
 
-                    <InfoBlock>
-                        <InfoTitle>What you can expect</InfoTitle>
-                        <List>
-                            <li>CMS and LMS application design</li>
-                            <li>Education website and portal UI</li>
-                            <li>Admin dashboard development</li>
-                            <li>Frontend and backend integration</li>
-                        </List>
-                    </InfoBlock>
+          <InfoBlock>
+            <InfoTitle>What you can expect</InfoTitle>
+            <List>
+              <li>CMS and LMS application design</li>
+              <li>Education website and portal UI</li>
+              <li>Admin dashboard development</li>
+              <li>Frontend and backend integration</li>
+            </List>
+          </InfoBlock>
 
-                    <InfoBlock>
-                        <InfoTitle>Applications I'm fluent in</InfoTitle>
-                        <List>
-                            <li>School and college websites</li>
-                            <li>Student learning platforms</li>
-                            <li>Admin panels and dashboards</li>
-                        </List>
-                    </InfoBlock>
+          <InfoBlock>
+            <InfoTitle>Applications I'm fluent in</InfoTitle>
+            <List>
+              <li>School and college websites</li>
+              <li>Student learning platforms</li>
+              <li>Admin panels and dashboards</li>
+            </List>
+          </InfoBlock>
 
-                    <QuoteButton>Get Free Project Quote</QuoteButton>
-                </LeftPanel>
+          <Btn myBtnName={"View all projects "} />
+        </LeftPanel>
 
-                <CardsGrid>
-                    {projects.map((project) => (
-                        <ProjectCard key={project.title}>
-                            <CardTop>
-                                <IconBox>{project.icon}</IconBox>
-                                <CardTitle>{project.title}</CardTitle>
-                            </CardTop>
+        <CardsGrid>
+          {projects.map((project) => (
+            <ProjectCard key={project.title}>
+              <CardTop>
+                <IconBox>{project.icon}</IconBox>
+                <CardTitle>{project.title}</CardTitle>
+              </CardTop>
 
-                            <CardBody>
-                                <CardText>{project.text}</CardText>
+              <CardBody>
+                <CardText>{project.text}</CardText>
 
-                                <PointList>
-                                    {project.points.map((point) => (
-                                        <li key={point}>{point}</li>
-                                    ))}
-                                </PointList>
-                            </CardBody>
-                        </ProjectCard>
-                    ))}
-                </CardsGrid>
-            </Wrapper>
-        </Section>
-    );
+                <PointList>
+                  {project.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </PointList>
+              </CardBody>
+            </ProjectCard>
+          ))}
+        </CardsGrid>
+      </Wrapper>
+    </Section>
+  );
 }
 
 const Section = styled.section`

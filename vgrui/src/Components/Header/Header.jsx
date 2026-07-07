@@ -1,294 +1,205 @@
-import React from 'react'
-import { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import {
-    HiOutlineMenuAlt3,
-    HiOutlineX,
+    HiOutlineHome,
+    HiOutlineUser,
+    HiOutlineCode,
+    HiOutlineBriefcase,
+    HiOutlineMail,
+    HiOutlineDocumentDownload,
 } from "react-icons/hi";
 
+const navItems = [
+    {
+        label: "Home",
+        href: "#home",
+        icon: <HiOutlineHome />,
+    },
+    {
+        label: "About",
+        href: "#about",
+        icon: <HiOutlineUser />,
+    },
+    {
+        label: "Skills",
+        href: "#skills",
+        icon: <HiOutlineCode />,
+    },
+    {
+        label: "Projects",
+        href: "#projects",
+        icon: <HiOutlineBriefcase />,
+    },
+    {
+        label: "Contact",
+        href: "#contact",
+        icon: <HiOutlineMail />,
+    },
+    {
+        label: "Resume",
+        href: "#",
+        icon: <HiOutlineDocumentDownload />,
+    },
+];
+
 export default function Header() {
-    const [menuOpen, setMenuOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
     return (
-        <>
-            <Nav scrolled={scrolled}>
-                <Logo href="#">
-                    {/* <span>V</span>GR  */}
-                </Logo>
+        <HeaderWrapper>
+            <Brand href="#home">VGR</Brand>
 
-                <NavMenu>
-                    <NavLink href="#home">Home</NavLink>
-                    <NavLink href="#about">About</NavLink>
-                    <NavLink href="#skills">Skills</NavLink>
-                    <NavLink href="#projects">Projects</NavLink>
-                    <NavLink href="#contact">Contact</NavLink>
-
-                    <ResumeBtn href="#">
-                        Resume
-                    </ResumeBtn>
-                </NavMenu>
-
-                <MenuButton onClick={() => setMenuOpen(!menuOpen)}>
-                    {menuOpen ? <HiOutlineX /> : <HiOutlineMenuAlt3 />}
-                </MenuButton>
-            </Nav>
-
-            <MobileMenu open={menuOpen}>
-                <MobileLink href="#home">Home</MobileLink>
-                <MobileLink href="#about">About</MobileLink>
-                <MobileLink href="#skills">Skills</MobileLink>
-                <MobileLink href="#projects">Projects</MobileLink>
-                <MobileLink href="#contact">Contact</MobileLink>
-
-                <MobileResume href="#">
-                    Download Resume
-                </MobileResume>
-            </MobileMenu>
-        </>
+            <NavList>
+                {navItems.map((item) => (
+                    <NavLink key={item.label} href={item.href} aria-label={item.label}>
+                        <Icon>{item.icon}</Icon>
+                        <Label>{item.label}</Label>
+                    </NavLink>
+                ))}
+            </NavList>
+        </HeaderWrapper>
     );
-};
+}
 
-const Nav = styled.nav`
-  background-color: rgba(2, 23, 61, 0.88),;
+const HeaderWrapper = styled.header`
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 8%;
+  top: 50%;
+  right: 26px;
   z-index: 1000;
-  transition: all .40s ease;
-  background: ${({ scrolled }) =>
-        scrolled
-            ? `
-      linear-gradient(
-        90deg,
-        rgba(17,25,40,.88),
-        rgba(14,19,34,.88)
-      )
-      `
-            : "transparent"};
+  width: 76px;
+  padding: 14px 10px;
+  border-radius: 50px;
+  background: rgba(10, 14, 26, 0.78);
+  border: 1px solid rgba(0, 198, 255, 0.18);
+  backdrop-filter: blur(18px);
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.35),
+    0 0 24px rgba(0, 198, 255, 0.08);
+  transform: translateY(-50%);
 
-  backdrop-filter: ${({ scrolled }) =>
-        scrolled ? "blur(20px) saturate(180%)" : "none"};
-
-  -webkit-backdrop-filter: ${({ scrolled }) =>
-        scrolled ? "blur(20px) saturate(180%)" : "none"};
-
-  border-bottom: ${({ scrolled }) =>
-        scrolled
-            ? "1px solid rgba(0,198,255,.12)"
-            : "none"};
-
-  box-shadow: ${({ scrolled }) =>
-        scrolled
-            ? `
-      0 8px 32px rgba(0,0,0,.35),
-      0 0 18px rgba(0,198,255,.08)
-      `
-            : "none"};
-`;
-const Logo = styled.a`
-  text-decoration: none;
-
-  font-size: 34px;
-  font-weight: 700;
-
-  color: white;
-
-  letter-spacing: 2px;
-
-  span{
-      background:linear-gradient(
-      135deg,
-      #7B2FF7,
-      #00C6FF
-      );
-
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
+  @media (max-width: 768px) {
+    top: auto;
+    right: 50%;
+    bottom: 18px;
+    width: min(92%, 430px);
+    padding: 10px 12px;
+    border-radius: 22px;
+    transform: translateX(50%);
   }
 `;
 
-const NavMenu = styled.div`
-  display:flex;
-  align-items:center;
-  gap:35px;
+const Brand = styled.a`
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7b2ff7, #00c6ff);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 900;
+  text-decoration: none;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 24px rgba(0, 198, 255, 0.32);
 
-  @media(max-width:900px){
-      display:none;
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const NavList = styled.nav`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 6px;
   }
 `;
 
 const NavLink = styled.a`
-  color:#d8d8d8;
+  position: relative;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  color: #d8e3f0;
+  text-decoration: none;
+  display: grid;
+  place-items: center;
+  transition: 0.3s ease;
 
-  text-decoration:none;
-
-  font-size:16px;
-
-  position:relative;
-
-  transition:.35s;
-
-  &:hover{
-      color:white;
+  &:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, #7b2ff7, #00c6ff);
+    box-shadow: 0 10px 28px rgba(0, 198, 255, 0.35);
+    transform: translateX(-5px);
   }
 
-  &:after{
-
-      content:"";
-
-      position:absolute;
-
-      left:0;
-      bottom:-6px;
-
-      width:0;
-      height:2px;
-
-      background:linear-gradient(
-      90deg,
-      #7B2FF7,
-      #00C6FF
-      );
-
-      transition:.35s;
-
+  &:hover span:last-child,
+  &:focus span:last-child {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(0);
   }
 
-  &:hover:after{
+  @media (max-width: 768px) {
+    width: 48px;
+    height: 48px;
 
-      width:100%;
-
-  }
-
-`;
-
-const ResumeBtn = styled.a`
-  text-decoration:none;
-
-  padding:12px 28px;
-
-  border-radius:50px;
-
-  color:white;
-
-  background:linear-gradient(
-  135deg,
-  #7B2FF7,
-  #00C6FF
-  );
-
-  font-weight:600;
-
-  transition:.35s;
-
-  &:hover{
-
-      transform:translateY(-3px);
-
-      box-shadow:0 10px 25px rgba(0,198,255,.4);
-
+    &:hover {
+      transform: translateY(-4px);
+    }
   }
 `;
 
-const MenuButton = styled.button`
-  display:none;
-
-  background:none;
-
-  border:none;
-
-  color:white;
-
-  font-size:34px;
-
-  cursor:pointer;
-
-  @media(max-width:900px){
-
-      display:block;
-
-  }
+const Icon = styled.span`
+  font-size: 25px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
 `;
 
-const MobileMenu = styled.div`
-  position: fixed;
+const Label = styled.span`
+  position: absolute;
+  top: 50%;
+  right: 68px;
+  min-width: 92px;
+  padding: 9px 14px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #0a0e1a;
+  font-size: 14px;
+  font-weight: 800;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-50%) translateX(10px);
+  transition: 0.28s ease;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 
-  top:80px;
-  left:0;
-
-  width:100%;
-
-  background:#0B1020;
-
-  display:flex;
-  flex-direction:column;
-
-  overflow:hidden;
-
-  max-height:${({ open }) => open ? "500px" : "0"};
-
-  transition:.4s;
-
-  z-index:999;
-
-  @media(min-width:901px){
-      display:none;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -5px;
+    width: 10px;
+    height: 10px;
+    background: #ffffff;
+    transform: translateY(-50%) rotate(45deg);
   }
-`;
 
-const MobileLink = styled.a`
-  text-decoration:none;
+  @media (max-width: 768px) {
+    top: -42px;
+    right: 50%;
+    min-width: auto;
+    transform: translateX(50%) translateY(8px);
 
-  color:white;
-
-  padding:18px;
-
-  text-align:center;
-
-  border-bottom:1px solid rgba(255,255,255,.08);
-
-  transition:.3s;
-
-  &:hover{
-
-      background:rgba(255,255,255,.05);
-
+    &::after {
+      top: auto;
+      right: 50%;
+      bottom: -5px;
+      transform: translateX(50%) rotate(45deg);
+    }
   }
-`;
-
-const MobileResume = styled.a`
-  margin:20px;
-
-  padding:14px;
-
-  text-align:center;
-
-  text-decoration:none;
-
-  border-radius:40px;
-
-  background:linear-gradient(
-  135deg,
-  #7B2FF7,
-  #00C6FF
-  );
-
-  color:white;
-
-  font-weight:600;
 `;
