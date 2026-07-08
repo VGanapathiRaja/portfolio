@@ -5,160 +5,145 @@ import { Typewriter } from "react-simple-typewriter";
 import Btn from "../../Button/Btnprimary";
 
 const techCards = [
-    "React",
-    "Node.js",
-    "Express",
-    "MongoDB",
-    "SQL",
+  "Html",
+  "Css / Frameworks",
+  "Javascript",
+  "React",
+  "Node.js",
+  "Express",
+  "MongoDB",
+  "MySQL",
+  "Angular",
+  "Canva"
 ];
 
 const skillDetails = [
-    {
-        title: "Frontend Skills",
-        text: "I build responsive, clean, and interactive interfaces using React, JavaScript, HTML, CSS, styled-components, and modern UI patterns.",
-    },
-    {
-        title: "Backend Skills",
-        text: "I create APIs, server-side logic, authentication flows, route handling, and scalable backend structure using Node.js and Express.js.",
-    },
-    {
-        title: "Databases",
-        text: "I work with MongoDB and SQL concepts including schemas, collections, queries, relationships, CRUD operations, and data handling.",
-    },
-    {
-        title: "About Me",
-        text: "I am VGR, a MERN stack developer focused on building practical web applications with strong design, clean code, and smooth user experience.",
-    },
-    {
-        title: "Frameworks & Libraries",
-        text: "I use React, styled-components, react-simple-typewriter, routing libraries, REST API patterns, and reusable component-based architecture.",
-    },
+  {
+    title: "Frontend Skills",
+    text: "I build responsive, clean, and interactive interfaces using React, JavaScript, HTML, CSS, some frameworks Bootstrap, and modern UI patterns.",
+  },
+  {
+    title: "Backend Skills",
+    text: "I create APIs, server-side logic, authentication flows, route handling, and scalable backend structure using Node.js and Express.js.",
+  },
+  {
+    title: "Databases",
+    text: "I work with MongoDB and SQL concepts including schemas, collections, queries, relationships, CRUD operations, and data handling.",
+  },
+  {
+    title: "Frameworks & Libraries",
+    text: "I use React, styled-components, react-simple-typewriter, routing libraries, REST API patterns, and reusable component-based architecture.",
+  },
 ];
 
 const education = [
-    {
-        level: "Schooling",
-        name: "Higher Secondary Education",
-        year: "Completed",
-        text: "Built my academic foundation with strong interest in computer science, logical thinking, and creative problem solving.",
-    },
-    {
-        level: "College",
-        name: "Degree / Graduation",
-        year: "Completed",
-        text: "Improved my technical skills through programming, projects, teamwork, and practical learning.",
-    },
-    {
-        level: "Career Learning",
-        name: "MERN Stack Development",
-        year: "Present",
-        text: "Focused on React, backend development, databases, and full stack project building.",
-    },
+
+  {
+    level: "UG",
+    name: "B.Tech / Information Technology",
+    year: "2020 Completed",
+    text: "I graduated from Christian College of Engineering & Technology, Dindigul, with a CGPA of 7.3. During my college years, I developed strong technical skills through programming, projects, teamwork, and practical learning. ",
+  },
+  {
+    level: "Schooling",
+    name: "Higher Secondary Education",
+    year: "2016 Completed",
+    text: "I built my academic foundation with a strong interest in Bio-Maths and Computer Science, developing logical thinking and creative problem-solving skills.",
+  },
+  {
+    level: "Career Learning",
+    name: "MERN Stack Development",
+    year: "Full stack Developer",
+    text: "I first focused on HTML, CSS, and JavaScript for web development, while also improving my skills in editing tools like Photoshop, Canva, and UI development. After that, I learned React, backend development, databases, and full-stack project building.",
+  },
 ];
 
 export default function Personal() {
-    return (
-        <>
-            <Personalcontainer>
-                <Container>
-                    <ImagePanel>
-                        <NameBadge>VGR</NameBadge>
+  return (
+    <>
+      <Personalcontainer>
+        <Container>
+          <ImagePanel>
+            <NameBadge>VGR</NameBadge>
 
-                        <ProfileImage src={Profile} alt="VGR profile" />
+            <ProfileImage src={Profile} alt="VGR profile" />
 
-                        <ImageBottom>
-                            <HireQuote>
-                                "Hire me to turn clean ideas into fast, modern, and user-friendly web experiences."
-                            </HireQuote>
-                            <Btn myBtnName={"Click know more..!"} />
-                        </ImageBottom>
-                    </ImagePanel>
+            <ImageBottom>
+              <HireQuote>
+                "Hire me to turn clean ideas into fast, modern, and user-friendly web experiences."
+              </HireQuote>
+              <Btn myBtnName={"Click Here..!"} />
+            </ImageBottom>
+          </ImagePanel>
 
-                    <ContentPanel>
-                        <SmallTitle>&gt; Hello, I'm</SmallTitle>
+          <ContentPanel>
+            <SmallTitle>&gt; Hello, I'm</SmallTitle>
 
-                        <Typing>
-                            <Typewriter
-                                words={[
-                                    "React Developer",
-                                    "MERN Stack Developer",
-                                    "Frontend Developer",
-                                    "Backend Developer",
-                                    "Fullstack Developer",
-                                ]}
-                                loop={0}
-                                cursor
-                                cursorStyle="|"
-                                typeSpeed={70}
-                                deleteSpeed={40}
-                                delaySpeed={1800}
-                            />
-                        </Typing>
+            <Typing>
+              <Typewriter
+                words={[
+                  "React Developer",
+                  "MERN Stack Developer",
+                  "Frontend Developer",
+                  "Backend Developer",
+                  "Fullstack Developer",
+                ]}
+                loop={0}
+                cursor
+                cursorStyle="|"
+                typeSpeed={70}
+                deleteSpeed={40}
+                delaySpeed={1800}
+              />
+            </Typing>
 
-                        <IntroText>
-                            I design and develop full stack web applications with strong frontend visuals,
-                            backend logic, database handling, and reusable component structure.
-                        </IntroText>
+            <IntroText>
+              I design and develop full stack web applications with strong frontend visuals,
+              backend logic, database handling, and reusable component structure.
+            </IntroText>
 
-                        <TechGrid>
-                            {techCards.map((tech, index) => (
-                                <TechBox key={tech}>
-                                    <TechNumber>0{index + 1}</TechNumber>
-                                    <TechName>{tech}</TechName>
-                                </TechBox>
-                            ))}
-                        </TechGrid>
+            <TechGrid>
+              {techCards.map((tech, index) => (
+                <TechBox key={tech}>
+                  <TechNumber>0{index + 1}</TechNumber>
+                  <TechName>{tech}</TechName>
+                </TechBox>
+              ))}
+            </TechGrid>
 
-                        <DetailsGrid>
-                            {skillDetails.map((item) => (
-                                <InfoCard key={item.title}>
-                                    <InfoTitle>{item.title}</InfoTitle>
-                                    <InfoText>{item.text}</InfoText>
-                                </InfoCard>
-                            ))}
-                        </DetailsGrid>
-                    </ContentPanel>
-                </Container>
-            </Personalcontainer>
+            <DetailsGrid>
+              {skillDetails.map((item) => (
+                <InfoCard key={item.title}>
+                  <InfoTitle>{item.title}</InfoTitle>
+                  <InfoText>{item.text}</InfoText>
+                </InfoCard>
+              ))}
+            </DetailsGrid>
+          </ContentPanel>
+        </Container>
+      </Personalcontainer>
 
-            <EducationSection>
-                <EducationHeader>
-                    <SmallTitle>&gt; Learning Journey</SmallTitle>
-                    <EducationTitle>Schooling & Education</EducationTitle>
-                </EducationHeader>
+      <EducationSection>
+        <EducationHeader>
+          <SmallTitle>&gt; Learning Journey</SmallTitle>
+          <EducationTitle>Schooling & Education</EducationTitle>
+        </EducationHeader>
 
-                <EducationGrid>
-                    {education.map((item, index) => (
-                        <EducationCard key={item.level}>
-                            <EduIndex>0{index + 1}</EduIndex>
-                            <EduLevel>{item.level}</EduLevel>
-                            <EduName>{item.name}</EduName>
-                            <EduYear>{item.year}</EduYear>
-                            <EduText>{item.text}</EduText>
-                        </EducationCard>
-                    ))}
-                </EducationGrid>
-            </EducationSection>
-            <EducationSection>
-                <EducationHeader>
-                    <SmallTitle>&gt; Learning Journey</SmallTitle>
-                    <EducationTitle>Schooling & Education</EducationTitle>
-                </EducationHeader>
+        <EducationGrid>
+          {education.map((item, index) => (
+            <EducationCard key={item.level}>
+              <EduIndex>0{index + 1}</EduIndex>
+              <EduLevel>{item.level}</EduLevel>
+              <EduName>{item.name}</EduName>
+              <EduYear>{item.year}</EduYear>
+              <EduText>{item.text}</EduText>
+            </EducationCard>
+          ))}
+        </EducationGrid>
+      </EducationSection>
 
-                <EducationGrid>
-                    {education.map((item, index) => (
-                        <EducationCard key={item.level}>
-                            <EduIndex>0{index + 1}</EduIndex>
-                            <EduLevel>{item.level}</EduLevel>
-                            <EduName>{item.name}</EduName>
-                            <EduYear>{item.year}</EduYear>
-                            <EduText>{item.text}</EduText>
-                        </EducationCard>
-                    ))}
-                </EducationGrid>
-            </EducationSection>
-        </>
-    );
+    </>
+  );
 }
 
 const Personalcontainer = styled.section`
@@ -231,6 +216,10 @@ const ImageBottom = styled.div`
   border-radius: 8px;
   background: rgba(10, 14, 26, 0.78);
   border: 1px solid rgba(255, 255, 255, 0.12);
+  @media (max-width:768px){
+  width: 75%;
+  left: 5px;
+}
 `;
 
 const HireQuote = styled.p`
@@ -286,12 +275,12 @@ const TechGrid = styled.div`
   }
 
   @media (max-width: 560px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 `;
 
 const TechBox = styled.div`
-  aspect-ratio: 1;
+  aspect-ratio: 1/1;
   padding: 18px;
   border-radius: 8px;
   background: #111827;
@@ -300,6 +289,12 @@ const TechBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+ 
+  @media (max-width:768px){
+  flex-direction: row;
+  aspect-ratio: inherit;
+  
+}
 `;
 
 const TechNumber = styled.span`
@@ -360,6 +355,9 @@ const EducationTitle = styled.h2`
   margin: 0;
   color: #ffffff;
   font-size: clamp(32px, 5vw, 58px);
+  @media (max-width: 768px){
+   font-size: 24px;
+  }
 `;
 
 const EducationGrid = styled.div`
@@ -381,6 +379,9 @@ const EducationCard = styled.div`
   border-radius: 8px;
   background: linear-gradient(145deg, #111827, #0f172a);
   border: 1px solid rgba(0, 198, 255, 0.16);
+  @media (max-width: 768px){
+    padding: 22px;
+  }
 `;
 
 const EduIndex = styled.span`
@@ -399,6 +400,9 @@ const EduName = styled.h3`
   margin: 0 0 10px;
   color: #ffffff;
   font-size: 24px;
+  @media (max-width: 768px){
+     font-size: 18px
+  }
 `;
 
 const EduYear = styled.p`
@@ -411,4 +415,8 @@ const EduText = styled.p`
   margin: 0;
   color: #cbd5e1;
   line-height: 1.7;
+  @media (max-width: 768px){
+   text-align: justify;
+   font-size: 16px;
+  }
 `;

@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from './Components/Header/Header'
+import Header from './Components/HeadFooter/Header'
 import Hero from './Components/Pages/Hero/Hero'
 import Hero1 from './Components/Pages/Hero2/Hero1'
 import Getin from './Components/Pages/Getin/Getin'
@@ -9,7 +9,7 @@ import Skills from './Components/Pages/Skill/Skill'
 import Projects from './Components/Pages/Projects/Projects'
 import GlobalStyle from './Components/Fullbody/Scrollbar'
 import Mousehover from './Components/Fullbody/Mousehover'
-import Footer from './Components/Header/Footer'
+import Footer from './Components/HeadFooter/Footer'
 
 
 export default function App() {

@@ -1,70 +1,70 @@
 import React from "react";
 import styled from "styled-components";
 import {
-    HiOutlineHome,
-    HiOutlineUser,
-    HiOutlineCode,
-    HiOutlineBriefcase,
-    HiOutlineMail,
-    HiOutlineDocumentDownload,
+  HiOutlineHome,
+  HiOutlineUser,
+  HiOutlineCode,
+  HiOutlineBriefcase,
+  HiOutlineMail,
+  HiOutlineDocumentDownload,
 } from "react-icons/hi";
 
 const navItems = [
-    {
-        label: "Home",
-        href: "#home",
-        icon: <HiOutlineHome />,
-    },
-    {
-        label: "About",
-        href: "#about",
-        icon: <HiOutlineUser />,
-    },
-    {
-        label: "Skills",
-        href: "#skills",
-        icon: <HiOutlineCode />,
-    },
-    {
-        label: "Projects",
-        href: "#projects",
-        icon: <HiOutlineBriefcase />,
-    },
-    {
-        label: "Contact",
-        href: "#contact",
-        icon: <HiOutlineMail />,
-    },
-    {
-        label: "Resume",
-        href: "#",
-        icon: <HiOutlineDocumentDownload />,
-    },
+  {
+    label: "Home",
+    href: "#home",
+    icon: <HiOutlineHome />,
+  },
+  {
+    label: "About",
+    href: "#about",
+    icon: <HiOutlineUser />,
+  },
+  {
+    label: "Skills",
+    href: "#skills",
+    icon: <HiOutlineCode />,
+  },
+  {
+    label: "Projects",
+    href: "#projects",
+    icon: <HiOutlineBriefcase />,
+  },
+  {
+    label: "Contact",
+    href: "#contact",
+    icon: <HiOutlineMail />,
+  },
+  {
+    label: "Resume",
+    href: "#",
+    icon: <HiOutlineDocumentDownload />,
+  },
 ];
 
 export default function Header() {
-    return (
-        <HeaderWrapper>
-            <Brand href="#home">VGR</Brand>
+  return (
+    <HeaderWrapper>
+      <Brand href="#home">VGR</Brand>
 
-            <NavList>
-                {navItems.map((item) => (
-                    <NavLink key={item.label} href={item.href} aria-label={item.label}>
-                        <Icon>{item.icon}</Icon>
-                        <Label>{item.label}</Label>
-                    </NavLink>
-                ))}
-            </NavList>
-        </HeaderWrapper>
-    );
+      <NavList>
+        {navItems.map((item) => (
+          <NavLink key={item.label} href={item.href} aria-label={item.label}>
+            <Icon>{item.icon}</Icon>
+            <Label>{item.label}</Label>
+          </NavLink>
+        ))}
+      </NavList>
+    </HeaderWrapper>
+  );
 }
 
 const HeaderWrapper = styled.header`
   position: fixed;
   top: 50%;
-  right: 26px;
+  right: 5px;
   z-index: 1000;
-  width: 76px;
+  width: 70px;
   padding: 14px 10px;
   border-radius: 50px;
   background: rgba(10, 14, 26, 0.78);
@@ -77,9 +77,9 @@ const HeaderWrapper = styled.header`
 
   @media (max-width: 768px) {
     top: auto;
-    right: 50%;
+    right: 47%;
     bottom: 18px;
-    width: min(92%, 430px);
+    width: min(85%, 430px);
     padding: 10px 12px;
     border-radius: 22px;
     transform: translateX(50%);
@@ -191,7 +191,7 @@ const Label = styled.span`
 
   @media (max-width: 768px) {
     top: -42px;
-    right: 50%;
+    right: -10px;
     min-width: auto;
     transform: translateX(50%) translateY(8px);
 

@@ -2,63 +2,63 @@ import React from "react";
 import styled from "styled-components";
 
 export default function Footer() {
-    const year = new Date().getFullYear();
+  const year = new Date().getFullYear();
 
-    return (
-        <FooterSection>
-            <FooterTop>
-                <BrandBlock>
-                    <Logo>VGR</Logo>
-                    <BrandText>
-                        MERN Stack Developer building clean, responsive, and user-focused web
-                        applications with modern frontend and backend technologies.
-                    </BrandText>
-                </BrandBlock>
+  return (
+    <FooterSection>
+      <FooterTop>
+        <BrandBlock>
+          <Logo>VGR</Logo>
+          <BrandText>
+            MERN Stack and Full stack Developer building clean, responsive, and user-focused web
+            applications with modern frontend and backend technologies.
+          </BrandText>
+        </BrandBlock>
 
-                <FooterColumn>
-                    <ColumnTitle>Quick Links</ColumnTitle>
-                    <FooterLink href="#home">Home</FooterLink>
-                    <FooterLink href="#about">About</FooterLink>
-                    <FooterLink href="#skills">Skills</FooterLink>
-                    <FooterLink href="#projects">Projects</FooterLink>
-                    <FooterLink href="#contact">Contact</FooterLink>
-                </FooterColumn>
+        <FooterColumn>
+          <ColumnTitle>Quick Links</ColumnTitle>
+          <FooterLink href="#home">Home</FooterLink>
+          <FooterLink href="#about">About</FooterLink>
+          <FooterLink href="#skills">Skills</FooterLink>
+          <FooterLink href="#projects">Projects</FooterLink>
+          <FooterLink href="#contact">Contact</FooterLink>
+        </FooterColumn>
 
-                <FooterColumn>
-                    <ColumnTitle>Services</ColumnTitle>
-                    <FooterText>Frontend Development</FooterText>
-                    <FooterText>Backend Development</FooterText>
-                    <FooterText>MERN Stack Projects</FooterText>
-                    <FooterText>Admin Dashboard UI</FooterText>
-                    <FooterText>Education Web Portals</FooterText>
-                </FooterColumn>
+        <FooterColumn>
+          <ColumnTitle>Services</ColumnTitle>
+          <FooterText>Frontend Development</FooterText>
+          <FooterText>Backend Development</FooterText>
+          <FooterText>MERN Stack Projects</FooterText>
+          <FooterText>Admin Dashboard UI</FooterText>
+          <FooterText>Education Web Portals</FooterText>
+        </FooterColumn>
 
-                <FooterColumn>
-                    <ColumnTitle>Contact</ColumnTitle>
-                    <FooterText>Available for freelance and full-time roles.</FooterText>
-                    <ContactLink href="mailto:yourmail@example.com">
-                        yourmail@example.com
-                    </ContactLink>
+        <FooterColumn>
+          <ColumnTitle>Contact</ColumnTitle>
+          <FooterText>Available for freelance and full-time roles.</FooterText>
+          <ContactLink href="vganapathiraja96@gmail.com">
+            vganapathiraja96@gmail.com
+          </ContactLink>
 
-                    <SocialRow>
-                        <SocialLink href="#" aria-label="GitHub">GH</SocialLink>
-                        <SocialLink href="#" aria-label="LinkedIn">IN</SocialLink>
-                        <SocialLink href="#" aria-label="Instagram">IG</SocialLink>
-                    </SocialRow>
-                </FooterColumn>
-            </FooterTop>
+          <SocialRow>
+            <SocialLink href="https://github.com/VGanpathiRaja " aria-label="GitHub">GH</SocialLink>
+            <SocialLink href="https://linkedin.com/in/v-ganapathi-raja-vgr-7b3408181" aria-label="LinkedIn">IN</SocialLink>
+            <SocialLink href="mailto:vganapathiraja96@gmail.com " aria-label="Instagram">GM</SocialLink>
+          </SocialRow>
+        </FooterColumn>
+      </FooterTop>
 
-            <FooterBottom>
-                <Copyright>
-                    © {year} VGR. All rights reserved.
-                </Copyright>
+      <FooterBottom>
+        <Copyright>
+          © {year} VGR. All rights reserved.
+        </Copyright>
 
-                <MadeText>
-                    Designed & developed with React.js
-                </MadeText>
-            </FooterBottom>
-        </FooterSection>
-    );
+        <MadeText>
+          Designed & developed with React.js  and Mern
+        </MadeText>
+      </FooterBottom>
+    </FooterSection>
+  );
 }
 
 const FooterSection = styled.footer`

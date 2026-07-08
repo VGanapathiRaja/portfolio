@@ -2,180 +2,177 @@ import React from "react";
 import styled from "styled-components";
 import Btn from "../../Button/Btnprimary";
 import {
-    FaPhoneAlt,
-    FaEnvelope,
-    FaLinkedin,
-    FaTwitter,
+	FaPhoneAlt,
+	FaEnvelope,
+	FaLinkedin,
+	FaTwitter,
 } from "react-icons/fa";
 
 const Getin = () => {
-    return (
-        <Section id="contact">
+	return (
+		<Section id="contact">
 
-            <Container>
+			<Container>
+				<Left>
 
-                {/* Left Side */}
+					<SmallTitle>
+						CONTACT
+					</SmallTitle>
 
-                <Left>
+					<Heading>
+						Let's talk about your
+						<span> next project.</span>
+					</Heading>
 
-                    <SmallTitle>
-                        CONTACT
-                    </SmallTitle>
+					<Description>
+						Thinking about a new website, portfolio, dashboard
+						or full stack application?
+						Feel free to contact me anytime.
+					</Description>
 
-                    <Heading>
-                        Let's talk about your
-                        <span> next project.</span>
-                    </Heading>
+					<ContactList>
 
-                    <Description>
-                        Thinking about a new website, portfolio, dashboard
-                        or full stack application?
-                        Feel free to contact me anytime.
-                    </Description>
+						<ContactCard>
 
-                    <ContactList>
+							<IconBox>
+								<FaPhoneAlt />
+							</IconBox>
 
-                        <ContactCard>
+							<div>
+								<Label>Phone</Label>
+								<Value>+91 75021 32895</Value>
+							</div>
 
-                            <IconBox>
-                                <FaPhoneAlt />
-                            </IconBox>
+						</ContactCard>
 
-                            <div>
-                                <Label>Phone</Label>
-                                <Value>+91 9876543210</Value>
-                            </div>
+						<ContactCard>
 
-                        </ContactCard>
+							<IconBox>
+								<FaEnvelope />
+							</IconBox>
 
-                        <ContactCard>
+							<div>
+								<Label>Email</Label>
+								<Value>vganapathiraja96@gmail.com </Value>
+							</div>
 
-                            <IconBox>
-                                <FaEnvelope />
-                            </IconBox>
+						</ContactCard>
 
-                            <div>
-                                <Label>Email</Label>
-                                <Value>ganapathi@email.com</Value>
-                            </div>
+						<ContactCard>
 
-                        </ContactCard>
+							<IconBox>
+								<FaLinkedin />
+							</IconBox>
 
-                        <ContactCard>
+							<div>
+								<Label>LinkedIn</Label>
+								<Value>v-ganapathi-raja-vgr-7b3408181 </Value>
+							</div>
 
-                            <IconBox>
-                                <FaLinkedin />
-                            </IconBox>
+						</ContactCard>
 
-                            <div>
-                                <Label>LinkedIn</Label>
-                                <Value>linkedin.com/in/ganapathi</Value>
-                            </div>
+						<ContactCard>
 
-                        </ContactCard>
+							<IconBox>
+								<FaTwitter />
+							</IconBox>
 
-                        <ContactCard>
+							<div>
+								<Label>GitHub</Label>
+								<Value>VGanpathiRaja</Value>
+							</div>
 
-                            <IconBox>
-                                <FaTwitter />
-                            </IconBox>
+						</ContactCard>
 
-                            <div>
-                                <Label>Twitter</Label>
-                                <Value>@GanapathiDev</Value>
-                            </div>
+					</ContactList>
 
-                        </ContactCard>
+				</Left>
 
-                    </ContactList>
+				{/* Right Side */}
 
-                </Left>
+				<Right>
 
-                {/* Right Side */}
+					<FormHeader>
 
-                <Right>
+						<h2>Your Contact Information</h2>
 
-                    <FormHeader>
+						<p>
+							Fill out the form below and I'll reply as soon as possible.
+						</p>
 
-                        <h2>Your Contact Information</h2>
+					</FormHeader>
 
-                        <p>
-                            Fill out the form below and I'll reply as soon as possible.
-                        </p>
+					<FormBody>
 
-                    </FormHeader>
+						<FormBody>
 
-                    <FormBody>
+							<Form>
 
-                        <FormBody>
+								<InputGroup>
 
-                            <Form>
+									<Input
+										type="text"
+										placeholder="Full Name *"
+									/>
 
-                                <InputGroup>
+									<Input
+										type="email"
+										placeholder="Email Address *"
+									/>
 
-                                    <Input
-                                        type="text"
-                                        placeholder="Full Name *"
-                                    />
+								</InputGroup>
 
-                                    <Input
-                                        type="email"
-                                        placeholder="Email Address *"
-                                    />
+								<InputGroup>
 
-                                </InputGroup>
+									<Input
+										type="tel"
+										placeholder="Phone Number"
+									/>
 
-                                <InputGroup>
+									<Input
+										type="text"
+										placeholder="Location"
+									/>
 
-                                    <Input
-                                        type="tel"
-                                        placeholder="Phone Number"
-                                    />
+								</InputGroup>
 
-                                    <Input
-                                        type="text"
-                                        placeholder="Location"
-                                    />
+								<InputGroup>
 
-                                </InputGroup>
+									<Input
+										type="text"
+										placeholder="Company / Organization"
+									/>
 
-                                <InputGroup>
+									<Input
+										type="text"
+										placeholder="Project Type"
+									/>
 
-                                    <Input
-                                        type="text"
-                                        placeholder="Company / Organization"
-                                    />
+								</InputGroup>
 
-                                    <Input
-                                        type="text"
-                                        placeholder="Project Type"
-                                    />
+								<TextArea
+									rows="7"
+									placeholder="Tell me about your project..."
+								/>
 
-                                </InputGroup>
+								<ButtonArea>
 
-                                <TextArea
-                                    rows="7"
-                                    placeholder="Tell me about your project..."
-                                />
+									<Btn myBtnName={"Send Message!😉"} />
 
-                                <ButtonArea>
+								</ButtonArea>
 
-                                    <Btn myBtnName={"Send Message~!😉"} />
+							</Form>
 
-                                </ButtonArea>
+						</FormBody>
 
-                            </Form>
+					</FormBody>
 
-                        </FormBody>
+				</Right>
 
-                    </FormBody>
+			</Container>
 
-                </Right>
-
-            </Container>
-
-        </Section>
-    );
+		</Section>
+	);
 };
 
 export default Getin;
@@ -183,109 +180,73 @@ export default Getin;
 /* ===================================================== */
 
 const Section = styled.section`
-
 width:100%;
-
 padding:100px 0;
-
 background:#0A0E1A;
-
 `;
 
 const Container = styled.div`
-
 width:min(1400px,92%);
-
 margin:auto;
-
 display:grid;
-
 grid-template-columns:1fr 1.2fr;
-
 gap:70px;
-
 align-items:center;
-
 @media(max-width:992px){
-
 grid-template-columns:1fr;
-
 }
 
 `;
 
 const Left = styled.div`
-
 display:flex;
-
 flex-direction:column;
-
 `;
 
 const SmallTitle = styled.p`
-
 color:#00C6FF;
-
 font-size:15px;
-
 letter-spacing:3px;
-
 font-weight:600;
-
 margin-bottom:18px;
-
+=
 `;
 
 const Heading = styled.h1`
-
-font-size:clamp(2.8rem,6vw,4.8rem);
-
+font-size:clamp(1.8rem,6vw,4.8rem);
 line-height:1.1;
-
 color:white;
-
 font-weight:800;
-
 margin-bottom:30px;
-
 span{
-
 display:block;
-
 background:linear-gradient(
 90deg,
 #00C6FF,
 #7B2FF7
 );
-
 -webkit-background-clip:text;
-
 -webkit-text-fill-color:transparent;
 
+}
+`;
+
+const Description = styled.p`
+color:#AEB4C5;
+font-size:18px;
+line-height:1.8;
+max-width:520px;
+margin-bottom:50px;
+
+@media (max-width:768px){
+font-size: 14px
 }
 
 `;
 
-const Description = styled.p`
-
-color:#AEB4C5;
-
-font-size:18px;
-
-line-height:1.8;
-
-max-width:520px;
-
-margin-bottom:50px;
-
-`;
-
 const ContactList = styled.div`
-
 display:flex;
-
 flex-direction:column;
-
 gap:25px;
 
 `;
@@ -335,12 +296,12 @@ margin-bottom:5px;
 `;
 
 const Value = styled.h4`
-
 color:white;
-
 font-size:18px;
-
 font-weight:500;
+@media (max-width:768px){
+font-size: 14px
+}
 
 `;
 
