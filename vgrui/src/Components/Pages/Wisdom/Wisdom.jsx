@@ -3,24 +3,28 @@ import styled, { keyframes } from "styled-components";
 
 const experiences = [
   {
-    company: "First Organization",
-    role: "Frontend Developer",
-    period: "2022 - 2023",
-    summary: "Built responsive React UI, reusable components, and clean frontend layouts.",
+    company: "Third Organization",
+    role: "Senior Developer & Teach Lead",
+    companyName: "SoftLogic Sysytem",
+    period: "2025 - Present",
+    summary: "Focused on scalable architecture, accessible and reusable design systems, polished UI, secure server integration, SEO optimization, and developing CMS and LMS solutions.",
   },
+
   {
     company: "Second Organization",
+    companyName: "Innovate Technology",
     role: "React Developer",
-    period: "2023 - 2024",
-    summary: "Created dashboards, integrated APIs, and improved user experience flows.",
+    period: "2023 - 2025",
+    summary: "Created responsive React websites, integrated REST APIs, developed interactive dashboards, and optimized user experience to deliver high-performing digital marketing solutions.",
   },
   {
-    company: "Third Organization",
-    role: "Senior Frontend Developer",
-    period: "2024 - Present",
-    summary: "Led frontend delivery, mentored developers, and built scalable React systems.",
-    back: "Focused on architecture, accessibility, reusable design systems, and polished UI.",
+    company: "First Organization",
+    companyName: "Muthu soft Lap.pvt.lmt",
+    role: "Frontend & Web Developer",
+    period: "2021 - 2022",
+    summary: "Develop and Built responsive websites using HTML, CSS, JavaScript, and PHP, with clean layouts, interactive user interfaces, and maintainable code..",
   },
+
 ];
 
 export default function Wisdom() {
@@ -45,6 +49,7 @@ export default function Wisdom() {
                 <FlipFace>
                   <Period>{item.period}</Period>
                   <Company>{item.company}</Company>
+                  <Companyname>{item.companyName}</Companyname>
                   <Role>{item.role}</Role>
                   <Text>{item.summary}</Text>
                 </FlipFace>
@@ -52,6 +57,7 @@ export default function Wisdom() {
                 <FlipFace $back>
                   <Period $dark>Highlights</Period>
                   <Company>{item.company}</Company>
+                  <Companyname>{item.companyName}</Companyname>
                   <Role $dark>{item.role}</Role>
                   <Text>{item.back || item.summary}</Text>
                 </FlipFace>
@@ -102,7 +108,7 @@ const LampLine = styled.div`
   pointer-events: none;
 
   @media (max-width: 800px) {
-    left: 28px;
+    display: none;
   }
 `;
 
@@ -162,7 +168,7 @@ const Row = styled.article`
   @media (max-width: 800px) {
     justify-content: flex-start;
     min-height: auto;
-    padding-left: 70px;
+    padding-left: 20px;
   }
 `;
 
@@ -180,7 +186,8 @@ const Dot = styled.span`
   transform: translateX(-50%);
 
   @media (max-width: 800px) {
-    left: 28px;
+    left: 15px;
+    top: 30px
   }
 `;
 
@@ -198,6 +205,7 @@ const Card = styled.div`
 
   @media (max-width: 800px) {
     width: 100%;
+    padding: 25px 15px;
   }
 `;
 
@@ -227,7 +235,7 @@ const FlipFace = styled.div`
   position: absolute;
   inset: 0;
   width: 100%;
-  min-height: 260px;
+  min-height: 320px;
   padding: 28px;
   border: 1px solid rgba(226, 232, 240, 0.16);
   border-radius: 8px;
@@ -239,6 +247,13 @@ const FlipFace = styled.div`
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
   backface-visibility: hidden;
   transform: ${({ $back }) => ($back ? "rotateY(180deg)" : "rotateY(0deg)")};
+
+   @media (max-width: 800px) {
+    width: 100%;
+    padding: 25px 15px;
+  }
+
+
 `;
 
 const Period = styled.p`
@@ -249,12 +264,17 @@ const Period = styled.p`
 
 const Company = styled.h3`
   margin: 0 0 8px;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
 `;
-
+const Companyname = styled.h4`
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-style: italic;
+`;
 const Role = styled.p`
   margin: 0 0 14px;
-  color: #d7dee9;
+   color: ${({ $dark }) => ($dark ? "#161103" : "#d7dee9")};
   font-weight: 700;
 `;
 

@@ -8,11 +8,11 @@ const technicalSkills = [
   },
   {
     title: "Backend",
-    skills: ["Node.js", "Express.js", "REST API", "Authentication", "Server Logic"],
+    skills: ["Node.js", "Express.js", "Python", "REST API", "Authentication", "Server Logic"],
   },
   {
     title: "Database",
-    skills: ["MongoDB", "SQL Basics", "CRUD", "Schema Design", "Data Handling"],
+    skills: ["MongoDB", "MySQL", "CRUD", "Schema Design", "Data Handling", "Db Connections"],
   },
   {
     title: "Tools",

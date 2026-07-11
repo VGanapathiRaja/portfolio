@@ -32,7 +32,7 @@ const skillDetails = [
   },
   {
     title: "Frameworks & Libraries",
-    text: "I use React, styled-components, react-simple-typewriter, routing libraries, REST API patterns, and reusable component-based architecture.",
+    text: "I use React, Tailwind CSS, Material UI (MUI), Bootstrap, styled-components, React Router, react-simple-typewriter, REST API integration, and reusable component-based architecture.",
   },
 ];
 
@@ -70,7 +70,7 @@ export default function Personal() {
 
             <ImageBottom>
               <HireQuote>
-                "Hire me to turn clean ideas into fast, modern, and user-friendly web experiences."
+                "Hire me!., Let's build fast, modern, and user-friendly web experiences together."
               </HireQuote>
               <Btn myBtnName={"Click Here..!"} />
             </ImageBottom>
@@ -156,10 +156,10 @@ const Personalcontainer = styled.section`
 `;
 
 const Container = styled.div`
-  width: min(1400px, 100%);
+  width: min(1200px, 100%);
   margin: auto;
   display: grid;
-  grid-template-columns: 0.9fr 1.25fr;
+  grid-template-columns: 1fr 1.25fr;
   gap: 0;
   align-items: stretch;
   overflow: hidden;
@@ -217,7 +217,7 @@ const ImageBottom = styled.div`
   background: rgba(10, 14, 26, 0.78);
   border: 1px solid rgba(255, 255, 255, 0.12);
   @media (max-width:768px){
-  width: 75%;
+  width: inherit;
   left: 5px;
 }
 `;
@@ -232,7 +232,7 @@ const HireQuote = styled.p`
 
 const ContentPanel = styled.div`
   min-height: 760px;
-  padding: 54px;
+  padding: 54px 20px;
   background: #0f172a;
 
   @media (max-width: 900px) {
