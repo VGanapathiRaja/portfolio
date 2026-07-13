@@ -60,7 +60,7 @@ const education = [
 
 export default function Personal() {
   return (
-    <>
+    <Personalsection id="personal">
       <Personalcontainer>
         <Container>
           <ImagePanel>
@@ -142,15 +142,17 @@ export default function Personal() {
         </EducationGrid>
       </EducationSection>
 
-    </>
+    </Personalsection>
   );
 }
 
-const Personalcontainer = styled.section`
-  padding: 70px 40px;
-  background: #0a0e1a;
+const Personalsection=styled.section`
 
-  @media (max-width: 768px) {
+`;
+const Personalcontainer = styled.div`
+ padding: 70px 40px;
+background: #0a0e1a;
+@media (max-width: 768px) {
     padding: 50px 16px;
   }
 `;

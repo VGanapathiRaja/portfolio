@@ -9,6 +9,7 @@ import {
   HiOutlineDocumentDownload,
 } from "react-icons/hi";
 
+import VGRlog from '../../assets/vgr-logo.png';
 const navItems = [
   {
     label: "Home",
@@ -17,7 +18,7 @@ const navItems = [
   },
   {
     label: "About",
-    href: "#about",
+    href: "#personal",
     icon: <HiOutlineUser />,
   },
   {
@@ -45,7 +46,10 @@ const navItems = [
 export default function Header() {
   return (
     <HeaderWrapper>
-      <Brand href="#home">VGR</Brand>
+      {/* <Brand href="#home">VGR</Brand> */}
+      <Brand href="#home">
+        <img src={VGRlog} alt="vgr logo" />
+      </Brand>
 
       <NavList>
         {navItems.map((item) => (
