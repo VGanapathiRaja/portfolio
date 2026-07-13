@@ -3,6 +3,7 @@ import { Typewriter } from "react-simple-typewriter";
 import Banner from "../../../assets/vgrbgbanner-landscap.png";
 import Bannerhero from "../../../assets/herobanner.png";
 
+
 const Hero = () => {
   return (
     <HeroContainer>
@@ -97,7 +98,7 @@ const Hero = () => {
         <img src={Bannerhero} alt="hero images" />
         <ButtonGroup>
           <PrimaryButton>View Projects</PrimaryButton>
-          <SecondaryButton>Download CV</SecondaryButton>
+          <SecondaryButton href={Vgrcv}>Download CV</SecondaryButton>
         </ButtonGroup>
       </Content>
     </HeroContainer>

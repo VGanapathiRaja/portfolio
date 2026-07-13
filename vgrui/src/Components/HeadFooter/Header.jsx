@@ -10,6 +10,7 @@ import {
 } from "react-icons/hi";
 
 import VGRlog from '../../assets/vgr-logo.png';
+import Vgrcv from '../../assets/GanapathiRajaV-cv.pdf'
 const navItems = [
   {
     label: "Home",
@@ -38,7 +39,7 @@ const navItems = [
   },
   {
     label: "Resume",
-    href: "#",
+    href: Vgrcv,
     icon: <HiOutlineDocumentDownload />,
   },
 ];

@@ -117,7 +117,7 @@ const Hero1 = () => {
           </Description>
 
           <ButtonGroup>
-            <Btn myBtnName=" Download CV " />
+            <Btn myBtnName={" Download CV "} />
             <Btnsecondary myBtnname={" Hire Me ..😎"} />
           </ButtonGroup>
 
