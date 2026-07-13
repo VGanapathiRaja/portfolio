@@ -41,7 +41,7 @@ export default function Projects() {
       <Wrapper>
         <LeftPanel>
           <Label>Services</Label>
-          <Title>My Expertise</Title>
+          <Title>&gt; My Expertise</Title>
 
           <InfoBlock>
             <InfoTitle>Solving problems</InfoTitle>

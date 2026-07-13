@@ -7,8 +7,100 @@ import {
 	FaLinkedin,
 	FaTwitter,
 } from "react-icons/fa";
-
+import { useState } from "react";
 const Getin = () => {
+	const [formData, setFormData] = useState({
+		fullName: "",
+		email: "",
+		phone: "",
+		location: "",
+		company: "",
+		projectType: "",
+		message: "",
+	});
+
+	const [errors, setErrors] = useState({});
+
+	// Handle Input Change
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+
+		setFormData((prev) => ({
+			...prev,
+			[name]: value,
+		}));
+	};
+
+	// Validation
+	const validate = () => {
+		let newErrors = {};
+
+		if (!formData.fullName.trim()) {
+			newErrors.fullName = "Full Name is required..!";
+		}
+
+		if (!formData.email.trim()) {
+			newErrors.email = "Email is required..!";
+		} else if (
+			!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)
+		) {
+			newErrors.email = "Invalid email address";
+		}
+
+		if (!formData.phone.trim()) {
+			newErrors.phone = "Mobile data is required..!";
+		}
+		else if (!/^[+]91(9|8|7)\d{9}$/.test(formData.phone)) {
+			newErrors.phone = "please fill the correct mobile data";
+		}
+
+		if (!formData.company.trim()) {
+			newErrors.company = "Company Name is required..!";
+		}
+
+		if (!formData.message.trim()) {
+			newErrors.message = "Messages / description is required..!";
+		}
+
+		setErrors(newErrors);
+
+		return Object.keys(newErrors).length === 0;
+	};
+
+	// Submit
+	const handleSubmit = (e) => {
+		e.preventDefault();
+
+		if (!validate()) return;
+
+		// Get existing data
+		const existingData =
+			JSON.parse(localStorage.getItem("contactData")) || [];
+
+		// Add new data
+		existingData.push(formData);
+
+		// Save
+		localStorage.setItem("contactData", JSON.stringify(existingData));
+
+		// Console
+		console.log("Submitted Data:", formData);
+
+		alert("Message Sent Successfully!");
+
+		// Reset
+		setFormData({
+			fullName: "",
+			email: "",
+			phone: "",
+			location: "",
+			company: "",
+			projectType: "",
+			message: "",
+		});
+
+		setErrors({});
+	};
 	return (
 		<Section id="contact">
 
@@ -16,7 +108,7 @@ const Getin = () => {
 				<Left>
 
 					<SmallTitle>
-						CONTACT
+						&gt; CONTACT
 					</SmallTitle>
 
 					<Heading>
@@ -91,82 +183,111 @@ const Getin = () => {
 				{/* Right Side */}
 
 				<Right>
-
 					<FormHeader>
-
-						<h2>Your Contact Information</h2>
+						<h2>
+							You can Contact me <Name>&gt; Vgr</Name>
+						</h2>
 
 						<p>
 							Fill out the form below and I'll reply as soon as possible.
 						</p>
-
 					</FormHeader>
 
 					<FormBody>
-
-						<FormBody>
-
-							<Form>
-
-								<InputGroup>
-
+						<Form onSubmit={handleSubmit}>
+							<InputGroup>
+								<div>
 									<Input
 										type="text"
+										name="fullName"
 										placeholder="Full Name *"
+										value={formData.fullName}
+										onChange={handleChange}
 									/>
+									{errors.fullName && (
+										<small style={{ color: "red" }}>{errors.fullName}</small>
+									)}
+								</div>
 
+								<div>
 									<Input
 										type="email"
+										name="email"
 										placeholder="Email Address *"
+										value={formData.email}
+										onChange={handleChange}
 									/>
+									{errors.email && (
+										<small style={{ color: "red" }}>{errors.email}</small>
+									)}
+								</div>
+							</InputGroup>
 
-								</InputGroup>
-
-								<InputGroup>
-
+							<InputGroup>
+								<div>
 									<Input
 										type="tel"
+										name="phone"
 										placeholder="Phone Number"
+										value={formData.phone}
+										onChange={handleChange}
 									/>
-
+									{errors.phone && (
+										<small style={{ color: "red" }}>{errors.phone}</small>
+									)}
+								</div>
+								<div>
 									<Input
 										type="text"
-										placeholder="Location"
-									/>
-
-								</InputGroup>
-
-								<InputGroup>
-
-									<Input
-										type="text"
+										name="company"
 										placeholder="Company / Organization"
+										value={formData.company}
+										onChange={handleChange}
 									/>
+									{errors.company && (
+										<small style={{ color: "red" }}>{errors.company}</small>
+									)}
+								</div>
 
-									<Input
-										type="text"
-										placeholder="Project Type"
-									/>
+							</InputGroup>
 
-								</InputGroup>
+							<InputGroup>
 
+								<Input
+									type="text"
+									name="location"
+									placeholder="Location"
+									value={formData.location}
+									onChange={handleChange}
+								/>
+								<Input
+									type="text"
+									name="projectType"
+									placeholder="Project Type"
+									value={formData.projectType}
+									onChange={handleChange}
+								/>
+							</InputGroup>
+
+							<div>
 								<TextArea
 									rows="7"
-									placeholder="Tell me about your project..."
+									name="message"
+									placeholder="Tell me about your Comments / Messages..."
+									value={formData.message}
+									onChange={handleChange}
 								/>
 
-								<ButtonArea>
+								{errors.message && (
+									<small style={{ color: "red" }}>{errors.message}</small>
+								)}
+							</div>
 
-									<Btn myBtnName={"Send Message!😉"} />
-
-								</ButtonArea>
-
-							</Form>
-
-						</FormBody>
-
+							<ButtonArea>
+								<Btn type="submit" myBtnName="Send Message!😉" />
+							</ButtonArea>
+						</Form>
 					</FormBody>
-
 				</Right>
 
 			</Container>
@@ -192,8 +313,10 @@ display:grid;
 grid-template-columns:1fr 1.2fr;
 gap:70px;
 align-items:center;
+padding: 60px 40px;
 @media(max-width:992px){
 grid-template-columns:1fr;
+padding: 60px 0;
 }
 
 `;
@@ -209,11 +332,14 @@ font-size:15px;
 letter-spacing:3px;
 font-weight:600;
 margin-bottom:18px;
-=
 `;
-
+const Name = styled.span`
+  color: #4ea9ff;
+  font-size: 14px;
+  font-weight: 700;
+`;
 const Heading = styled.h1`
-font-size:clamp(1.8rem,6vw,4.8rem);
+font-size:clamp(1.8rem,5vw,4.8rem);
 line-height:1.1;
 color:white;
 font-weight:800;

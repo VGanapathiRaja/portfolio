@@ -4,104 +4,104 @@ import Banner from "../../../assets/vgrbgbanner-landscap.png";
 import Bannerhero from "../../../assets/herobanner.png";
 
 const Hero = () => {
-    return (
-        <HeroContainer>
-            <BackgroundImage src={Banner} alt="Developer Banner" />
+  return (
+    <HeroContainer>
+      <BackgroundImage src={Banner} alt="Developer Banner" />
 
-            <Overlay />
+      <Overlay />
 
-            <Content>
-                <Title>
-                    Hi, I'm <Name>Ganapathi</Name>
-                </Title>
+      <Content>
+        <Title>
+          Hi, I'm <Name>Ganapathi</Name>
+        </Title>
 
-                {/* <Subtitle>Full Stack Developer</Subtitle> */}
+        {/* <Subtitle>Full Stack Developer</Subtitle> */}
 
-                <CodeContainer>
-                    <CodeHeader>
-                        <Dot red />
-                        <Dot yellow />
-                        <Dot green />
-                        <FileName>Developer.js</FileName>
-                    </CodeHeader>
+        <CodeContainer>
+          <CodeHeader>
+            <Dot red />
+            <Dot yellow />
+            <Dot green />
+            <FileName>Developer.js</FileName>
+          </CodeHeader>
 
-                    <CodeBody>
-                        <CodeLine>
-                            <Keyword>const</Keyword> developer <Operator>=</Operator> {"{"}
-                        </CodeLine>
+          <CodeBody>
+            <CodeLine>
+              <Keyword>const</Keyword> developer <Operator>=</Operator> {"{"}
+            </CodeLine>
 
-                        <CodeLine>
-                            &nbsp;&nbsp;<Property>name</Property>:{" "}
-                            <String>"Ganapathi Raja V"</String>,
-                        </CodeLine>
+            <CodeLine>
+              &nbsp;&nbsp;<Property>name</Property>:{" "}
+              <String>"Ganapathi Raja V"</String>,
+            </CodeLine>
 
-                        <CodeLine>
-                            &nbsp;&nbsp;<Property>role</Property>:{" "}
-                            <String>
-                                "
-                                <Typewriter
-                                    words={[
-                                        "Full Stack Developer",
-                                        "React Developer",
-                                        "Frontend Developer",
-                                        "MERN Stack Developer",
-                                    ]}
-                                    loop={0}
-                                    cursor
-                                    cursorStyle="|"
-                                    typeSpeed={70}
-                                    deleteSpeed={40}
-                                    delaySpeed={1500}
-                                />
-                                "
-                            </String>
-                            ,
-                        </CodeLine>
+            <CodeLine>
+              &nbsp;&nbsp;<Property>role</Property>:{" "}
+              <String>
+                "
+                <Typewriter
+                  words={[
+                    "Full Stack Developer",
+                    "React Developer",
+                    "Frontend Developer",
+                    "MERN Stack Developer",
+                  ]}
+                  loop={0}
+                  cursor
+                  cursorStyle="|"
+                  typeSpeed={70}
+                  deleteSpeed={40}
+                  delaySpeed={1500}
+                />
+                "
+              </String>
+              ,
+            </CodeLine>
 
-                        <CodeLine>
-                            &nbsp;&nbsp;<Property>skills</Property>: [
-                        </CodeLine>
+            <CodeLine>
+              &nbsp;&nbsp;<Property>skills</Property>: [
+            </CodeLine>
 
-                        <CodeLine>
-                            &nbsp;&nbsp;&nbsp;&nbsp;
-                            <String>"React"</String>,
-                        </CodeLine>
+            <CodeLine>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <String>"React"</String>,
+            </CodeLine>
 
-                        <CodeLine>
-                            &nbsp;&nbsp;&nbsp;&nbsp;
-                            <String>"Node"</String>,
-                        </CodeLine>
+            <CodeLine>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <String>"Node"</String>,
+            </CodeLine>
 
-                        <CodeLine>
-                            &nbsp;&nbsp;&nbsp;&nbsp;
-                            <String>"MongoDB"</String>,
-                        </CodeLine>
+            <CodeLine>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <String>"MongoDB"</String>,
+            </CodeLine>
 
-                        <CodeLine>
-                            &nbsp;&nbsp;&nbsp;&nbsp;
-                            <String>"Express"</String>,
-                        </CodeLine>
+            <CodeLine>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <String>"Express"</String>,
+            </CodeLine>
 
-                        <CodeLine>
-                            &nbsp;&nbsp;&nbsp;&nbsp;
-                            <String>"MySQL"</String>
-                        </CodeLine>
+            <CodeLine>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <String>"MySQL"</String>
+            </CodeLine>
 
-                        <CodeLine>&nbsp;&nbsp;]</CodeLine>
+            <CodeLine>&nbsp;&nbsp;]</CodeLine>
 
-                        <CodeLine>{"}"}</CodeLine>
-                    </CodeBody>
-                </CodeContainer>
-            </Content>
-            <Content>
-                <img src={Bannerhero} alt="hero images" />
-                <ButtonGroup>
-                    <PrimaryButton>View Projects</PrimaryButton>
-                    <SecondaryButton>Download CV</SecondaryButton>
-                </ButtonGroup>
-            </Content>
-        </HeroContainer>
-    );
+            <CodeLine>{"}"}</CodeLine>
+          </CodeBody>
+        </CodeContainer>
+      </Content>
+      <Content>
+        <img src={Bannerhero} alt="hero images" />
+        <ButtonGroup>
+          <PrimaryButton>View Projects</PrimaryButton>
+          <SecondaryButton>Download CV</SecondaryButton>
+        </ButtonGroup>
+      </Content>
+    </HeroContainer>
+  );
 };
 
 export default Hero;
@@ -109,6 +109,7 @@ export default Hero;
 /* ================= Styled Components ================= */
 
 const HeroContainer = styled.section`
+ padding: 60px 40px;
   position: relative;
   width: 100%;
   min-height: 100vh;
@@ -118,7 +119,7 @@ const HeroContainer = styled.section`
   overflow: hidden;
   padding: 60px 40px;
   @media (max-width: 600px){
-    padding: 60px 20px;
+    padding: 60px 0px;
     display: block;
   }
 `;
@@ -168,7 +169,7 @@ align-items: center;
 `;
 
 const Title = styled.h1`
-  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-size: clamp(36px, 7vw, 5rem);
   font-weight: 700;
   line-height: 1.2;
 `;
@@ -261,11 +262,11 @@ const Dot = styled.div`
   border-radius: 50%;
   margin-right: 8px;
   background: ${(props) =>
-        props.red
-            ? "#ff5f56"
-            : props.yellow
-                ? "#ffbd2e"
-                : "#27c93f"};
+    props.red
+      ? "#ff5f56"
+      : props.yellow
+        ? "#ffbd2e"
+        : "#27c93f"};
 `;
 
 const FileName = styled.span`

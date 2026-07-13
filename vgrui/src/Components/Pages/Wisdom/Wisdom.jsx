@@ -30,8 +30,12 @@ const experiences = [
 export default function Wisdom() {
   return (
     <Section id="experience">
-      <Title>Experience</Title>
-
+      <SmallTitle>&gt; My Wisdom</SmallTitle>
+      <Title>  Experience</Title>
+      <SubText>
+        A balanced mix of technical knowledge and personal strengths that help me
+        build clean, useful, and user-focused web applications.
+      </SubText>
       <Timeline>
         <LampLine>
           <LampHead />
@@ -88,10 +92,32 @@ const Section = styled.section`
   }
 `;
 
+const SmallTitle = styled.p`
+color:#00C6FF;
+font-size:15px;
+letter-spacing:3px;
+font-weight:600;
+margin-bottom:18px;
+text-align: center
+`;
+
+
 const Title = styled.h2`
-  margin: 0 0 70px;
+  margin: 0 0 30px;
   text-align: center;
-  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  font-size: clamp(36px, 6vw, 70px);
+`;
+
+const SubText = styled.p`
+  margin: 10px 0 50px 0;
+  color: #b9c4d4;
+  font-size: 17px;
+  line-height: 1.8;
+  text-align: center;
+  @media (max-width: 800px) {
+  padding: 10px 15px
+  }
+
 `;
 
 const Timeline = styled.div`
@@ -219,7 +245,8 @@ const FlipCard = styled.div`
   }
 
   @media (max-width: 800px) {
-    width: 100%;
+    width: 98%;
+    min-height: 420px;
   }
 `;
 
@@ -229,6 +256,9 @@ const FlipInner = styled.div`
   min-height: 260px;
   transform-style: preserve-3d;
   transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+   @media (max-width: 800px) {
+    min-height: 430px;
+  }
 `;
 
 const FlipFace = styled.div`
@@ -251,6 +281,7 @@ const FlipFace = styled.div`
    @media (max-width: 800px) {
     width: 100%;
     padding: 25px 15px;
+    min-height: 350px;
   }
 
 
