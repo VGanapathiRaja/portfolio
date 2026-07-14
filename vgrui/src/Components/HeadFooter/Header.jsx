@@ -148,8 +148,8 @@ const NavLink = styled.a`
   }
 
   @media (max-width: 768px) {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
 
     &:hover {
       transform: translateY(-4px);
@@ -196,7 +196,7 @@ const Label = styled.span`
 
   @media (max-width: 768px) {
     top: -42px;
-    right: -10px;
+    right: -20px;
     min-width: auto;
     transform: translateX(50%) translateY(8px);
 

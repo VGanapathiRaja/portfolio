@@ -72,7 +72,8 @@ export default function Personal() {
               <HireQuote>
                 "Hire me!., Let's build fast, modern, and user-friendly web experiences together."
               </HireQuote>
-              <Btn myBtnName={"Click Here..!"} />
+              <Btn myBtnName={"Click Here..!"}
+                url={"https://mail.google.com/mail/?view=cm&fs=1&to=vganapathiraja96@gmail.com"} />
             </ImageBottom>
           </ImagePanel>
 
@@ -146,7 +147,7 @@ export default function Personal() {
   );
 }
 
-const Personalsection=styled.section`
+const Personalsection = styled.section`
 
 `;
 const Personalcontainer = styled.div`

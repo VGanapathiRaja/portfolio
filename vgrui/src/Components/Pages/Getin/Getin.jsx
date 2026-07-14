@@ -302,7 +302,6 @@ export default Getin;
 
 const Section = styled.section`
 width:100%;
-padding:100px 0;
 background:#0A0E1A;
 `;
 

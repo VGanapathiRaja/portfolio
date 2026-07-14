@@ -1,8 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
-export default function Btnsecondary({ myBtnname }) {
+export default function Btnsecondary({ myBtnname, url }) {
+    const handleClick = () => {
+        if (url.startsWith("http")) {
+            window.open(url, "_blank", "noopener,noreferrer");
+        } else {
+            window.location.href = url;
+        }
+    };
     return (
-        <Mybtnsecondary>
+        <Mybtnsecondary onClick={handleClick}>
             {myBtnname}
         </Mybtnsecondary>
     )

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Banner from "../../../assets/vgrbgbanner-landscap.png"; // Change path if needed
 import { Typewriter } from "react-simple-typewriter";
 import Profile from "../../../assets/herobanner.png";
-
+import Vgrcv from '../../../assets/GanapathiRajaV-cv.pdf'
 import {
   FaReact,
   FaNodeJs,
@@ -10,7 +10,7 @@ import {
   FaCss3Alt,
   FaBootstrap,
   FaPython,
-  FaMicrosoft,
+  FaMicrosoft
 } from "react-icons/fa";
 
 import {
@@ -22,8 +22,12 @@ import {
   SiCanva,
   SiMysql,
   SiExpress,
+  SiVite,
 } from "react-icons/si";
-import { TbBrandAdobePhotoshop } from "react-icons/tb";
+import {
+  TbBrandAdobePhotoshop,
+  TbBrandVscode
+} from "react-icons/tb";
 import Btnsecondary from "../../Button/Btnsecondary";
 import Btn from "../../Button/Btnprimary";
 const stats = [
@@ -37,30 +41,34 @@ const stats = [
     number: "10+",
     title: "Projects",
     subtitle: "Completed",
-    color: "#22C55E",
+    color: "#12569e",
   },
   {
     number: "5",
     title: "Open Source",
     subtitle: "Libraries",
-    color: "#D9FF00",
+    color: "#7411ed",
   },
 ];
 const technologies = [
-  { icon: <FaReact />, name: "React", angle: 20, color: "#61DBFB" },
-  { icon: <SiExpress />, name: "React", angle: 350, color: "#61DBFB" },
-  { icon: <SiJavascript />, name: "JavaScript", angle: 40, color: "#F7DF1E" },
-  { icon: <FaNodeJs />, name: "Node.js", angle: 70, color: "#68A063" },
-  { icon: <SiMongodb />, name: "MongoDB", angle: 90, color: "#4DB33D" },
-  { icon: <SiMysql />, name: "MySQL", angle: 120, color: "#00758F" },
-  { icon: <FaPython />, name: "Python", angle: 150, color: "#3776AB" },
-  { icon: <SiJquery />, name: "jQuery", angle: 180, color: "#0769AD" },
-  { icon: <FaBootstrap />, name: "Bootstrap", angle: 220, color: "#7952B3" },
+  { icon: <FaReact />, name: "React", angle: 50, color: "#61DBFB" },
+  { icon: <SiJavascript />, name: "JavaScript", angle: 70, color: "#F7DF1E" },
+  { icon: <FaHtml5 />, name: "Html", angle: 90, color: "#e7a109" },
+  { icon: <FaCss3Alt />, name: "Css", angle: 110, color: "#3f50e9" },
+  { icon: <FaNodeJs />, name: "Node.js", angle: 130, color: "#68A063" },
+  { icon: <SiMongodb />, name: "MongoDB", angle: 150, color: "#4DB33D" },
+  { icon: <SiMysql />, name: "MySQL", angle: 170, color: "#00758F" },
+  { icon: <FaPython />, name: "Python", angle: 190, color: "#3776AB" },
+  { icon: <SiJquery />, name: "jQuery", angle: 210, color: "#0769AD" },
+  { icon: <FaBootstrap />, name: "Bootstrap", angle: 230, color: "#7952B3" },
   { icon: <SiTailwindcss />, name: "Tailwind", angle: 250, color: "#38BDF8" },
   { icon: <SiMui />, name: "Material UI", angle: 270, color: "#007FFF" },
   { icon: <SiCanva />, name: "Canva", angle: 290, color: "#00C4CC" },
   { icon: <TbBrandAdobePhotoshop />, name: "Photoshop", angle: 310, color: "#31A8FF" },
   { icon: <FaMicrosoft />, name: "MS Office", angle: 330, color: "#D83B01" },
+  { icon: <SiExpress />, name: "React", angle: 350, color: "#61DBFB" },
+  { icon: <SiVite />, name: "Vite", angle: 370, color: "#61DBFB" },
+  { icon: <TbBrandVscode />, name: "Vs", angle: 390, color: "#61DBFB" },
 ];
 const Hero1 = () => {
   return (
@@ -68,25 +76,17 @@ const Hero1 = () => {
       <Background />
       <Overlay />
       <Container>
-
         <LeftContent>
-
           <SmallTitle>
             &gt; Hello, I'm
           </SmallTitle>
-
           <MainTitle>
             Ganapathi
           </MainTitle>
-
           <Heading>
-
             Full Stack
-
             <Gradient>Developer &</Gradient>
-
           </Heading>
-
           <Typing>
 
             <Typewriter
@@ -117,31 +117,28 @@ const Hero1 = () => {
           </Description>
 
           <ButtonGroup>
-            <Btn myBtnName={" Download CV "} />
-            <Btnsecondary myBtnname={" Hire Me ..😎"} />
+            <Btn myBtnName={" Download CV "} url={Vgrcv} />
+            <Btnsecondary myBtnname={"Hire Me.. 😎"}
+              url={"https://mail.google.com/mail/?view=cm&fs=1&to=vganapathiraja96@gmail.com"} />
           </ButtonGroup>
 
           <StatsContainer>
             {stats.map((item, index) => (
               <StatItem key={index}>
                 <Number color={item.color}>{item.number}</Number>
-
                 <Text>
                   <span>{item.title}</span>
                   <span>{item.subtitle}</span>
                 </Text>
-
                 {index !== stats.length - 1 && <Divider />}
               </StatItem>
             ))}
           </StatsContainer>
         </LeftContent>
+
         <RightContent>
-
           <GlowCircle />
-
           <ImageContainer>
-
             <DeveloperImage
               src={Profile}
               alt="Ganapathi"
@@ -157,9 +154,7 @@ const Hero1 = () => {
               </FloatingIcon>
             ))}
           </ImageContainer>
-
         </RightContent>
-
       </Container>
     </HeroSection>
   );
@@ -219,7 +214,7 @@ const Container = styled.div`
     justify-content: center;
     text-align: center;
     gap: 40px;
-    padding: 120px 0 60px;
+    padding: 40px 0 60px;
   }
 `;
 
@@ -345,14 +340,17 @@ const StatItem = styled.div`
   position: relative;
   @media (max-width: 768px) {
     width: 100%;
+    justify-content: start;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid #3b82f6;
   }
 `;
 
 const Number = styled.h1`
-  font-size: clamp(3rem, 1.5vw, 2rem);
+  font-size: clamp(2rem, 1.5vw, 2rem);
   color: ${({ color }) => color};
   font-weight: 800;
-  margin-right: 18px;
+  margin-right: 15px;
   line-height: 1;
 `;
 const Text = styled.div`
@@ -375,9 +373,13 @@ const Text = styled.div`
     }
 
     span:last-child {
-      font-size: .5rem;
+      font-size: .8rem;
+      padding: 0 10px;
     }
   }
+    @media (max-width: 768px) {
+      flex-direction: row-reverse;  
+    }
 `;
 
 const Divider = styled.div`

@@ -36,7 +36,7 @@ export default function Footer() {
         <FooterColumn>
           <ColumnTitle>Contact</ColumnTitle>
           <FooterText>Available for freelance and full-time roles.</FooterText>
-          <ContactLink href="vganapathiraja96@gmail.com">
+          <ContactLink href="https://mail.google.com/mail/?view=cm&fs=1&to=vganapathiraja96@gmail.com">
             vganapathiraja96@gmail.com
           </ContactLink>
 

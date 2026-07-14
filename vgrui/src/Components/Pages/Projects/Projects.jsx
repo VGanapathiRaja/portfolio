@@ -71,7 +71,7 @@ export default function Projects() {
             </List>
           </InfoBlock>
 
-          <Btn myBtnName={"View all projects "} />
+          <Btn myBtnName={"View all projects "} url={'/projectspage'} />
         </LeftPanel>
 
         <CardsGrid>
